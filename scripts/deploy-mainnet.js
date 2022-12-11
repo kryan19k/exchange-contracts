@@ -17,7 +17,7 @@ const {
     VESTING_COUNT,
     TIMELOCK_DELAY,
     WETH_PNG_FARM_ALLOCATION
-} = require(`../constants/${network.name}.js`);
+} = require(`../constants/songbird.js`);
 const { CHAINS } = require("@pangolindex/sdk");
 if (USE_GNOSIS_SAFE) {
     var { EthersAdapter, SafeFactory } = require("@gnosis.pm/safe-core-sdk");
@@ -43,6 +43,7 @@ function delay(timeout) {
 async function main() {
     const [deployer] = await ethers.getSigners();
     console.log("\nDeployer:", deployer.address);
+    await ethers.provider.setNetwork("songbird");
 
     const initBalance = await deployer.getBalance();
     console.log("Balance:", ethers.utils.formatEther(initBalance) + "\n");
