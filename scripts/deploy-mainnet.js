@@ -18,7 +18,7 @@ const {
     TIMELOCK_DELAY,
     WETH_PNG_FARM_ALLOCATION
 } = require(`../constants/${network.name}.js`);
-//const { CHAINS } = require("@pangolindex/sdk");
+const { CHAINS } = require("@pangolindex/sdk");
 if (USE_GNOSIS_SAFE) {
     var { EthersAdapter, SafeFactory } = require("@gnosis.pm/safe-core-sdk");
 }
